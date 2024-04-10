@@ -1,8 +1,8 @@
 import pygame
 import asyncio
 # Inicjalizacja Pygame
-pygame.init()
-aa = pygame.image.load("map_test.png")
+# pygame.init()
+
 # Ustawienia okna
 SCREEN_WIDTH = 400
 SCREEN_HEIGHT = 400
@@ -23,11 +23,12 @@ async def main():
 
         # Wypełnienie tła kolorem niebieskim
         WINDOW.fill(BLUE)
-        WINDOW.blit(aa, (0, 0))
+
         # Aktualizacja ekranu
         pygame.display.flip()
         asyncio.sleep(0)
+    pygame.quit()
 
-asyncio.run(main())
-# Zakończenie Pygame
-# pygame.quit()
+
+if __name__ == "__main__":
+    asyncio.run(main())
