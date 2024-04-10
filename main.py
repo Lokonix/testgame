@@ -26,7 +26,7 @@ async def main():
 
         # Aktualizacja ekranu
         pygame.display.update()
-        asyncio.sleep(0)
+        await asyncio.sleep(0)
     pygame.quit()
 
 
