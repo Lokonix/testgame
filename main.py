@@ -26,6 +26,7 @@ async def main():
         WINDOW.blit(aa, (0, 0))
         # Aktualizacja ekranu
         pygame.display.flip()
+        asyncio.sleep(0)
 
 asyncio.run(main())
 # Zakończenie Pygame
