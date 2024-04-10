@@ -1,23 +1,30 @@
-import sys, pygame
+import pygame
+
+# Inicjalizacja Pygame
 pygame.init()
 
-size = width, height = 320, 240
-speed = [2, 2]
-black = 0, 0, 0
-screen = pygame.display.set_mode(size)
+# Ustawienia okna
+SCREEN_WIDTH = 800
+SCREEN_HEIGHT = 600
+WINDOW = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
+pygame.display.set_caption("Niebieskie tło w Pygame")
 
-ball = pygame.image.load("map_test.bmp")
-ballrect = ball.get_rect()
-while 1:
-        for event in pygame.event.get():
-            if event.type == pygame.QUIT: sys.exit()
+# Kolory
+BLUE = (0, 0, 255)  # Składniki RGB: czerwony, zielony, niebieski
 
-        ballrect = ballrect.move(speed)
-        if ballrect.left < 0 or ballrect.right > width:
-            speed[0] = -speed[0]
-        if ballrect.top < 0 or ballrect.bottom > height:
-            speed[1] = -speed[1]
+# Główna pętla gry
+running = True
+while running:
+    # Obsługa zdarzeń
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            running = False
 
-        screen.fill(black)
-        screen.blit(ball, ballrect)
-        pygame.display.flip()
+    # Wypełnienie tła kolorem niebieskim
+    WINDOW.fill(BLUE)
+
+    # Aktualizacja ekranu
+    pygame.display.flip()
+
+# Zakończenie Pygame
+pygame.quit()
