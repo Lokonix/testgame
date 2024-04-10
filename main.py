@@ -25,7 +25,7 @@ async def main():
         WINDOW.fill(BLUE)
 
         # Aktualizacja ekranu
-        pygame.display.flip()
+        pygame.display.update()
         asyncio.sleep(0)
     pygame.quit()
 
