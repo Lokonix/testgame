@@ -1,2 +1,0 @@
-# testgame
-test for termux
