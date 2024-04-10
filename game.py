@@ -1,27 +1,23 @@
-import pygame
+import sys, pygame
+pygame.init()
 
+size = width, height = 320, 240
+speed = [2, 2]
+black = 0, 0, 0
+screen = pygame.display.set_mode(size)
 
-background_color = (255,255,255)
-(width, height) = (800, 800)
-screen = pygame.display.set_mode((width, height))
-pygame.display.set_caption('Recreate')
+ball = pygame.image.load("map_test.bmp")
+ballrect = ball.get_rect()
+while 1:
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT: sys.exit()
 
-map = pygame.image.load("map_test.bmp")
+        ballrect = ballrect.move(speed)
+        if ballrect.left < 0 or ballrect.right > width:
+            speed[0] = -speed[0]
+        if ballrect.top < 0 or ballrect.bottom > height:
+            speed[1] = -speed[1]
 
-
-
-def silnik():
-    pygame.display.flip()
-
-    screen.blit(map, (0,0))
-
-
-
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            print("quit game")
-            Game = False
-
-Game = True
-while Game:
-    silnik()
+        screen.fill(black)
+        screen.blit(ball, ballrect)
+        pygame.display.flip()
