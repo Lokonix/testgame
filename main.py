@@ -4,8 +4,8 @@ import asyncio
 # pygame.init()
 
 # Ustawienia okna
-SCREEN_WIDTH = 400
-SCREEN_HEIGHT = 400
+SCREEN_WIDTH = 800
+SCREEN_HEIGHT = 500
 WINDOW = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 pygame.display.set_caption("Niebieskie tło w Pygame")
 abc = pygame.image.load("img/map_test.png")
